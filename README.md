@@ -1,87 +1,205 @@
-Wazuh Installation Guide (Ubuntu 22.04)
+# 🛡️ Wazuh SIEM Installation Guide
 
-A Full guideline of Wazuh installation 
+![OS](https://img.shields.io/badge/OS-Ubuntu%2022.04-orange)
+![SIEM](https://img.shields.io/badge/SIEM-Wazuh-blue)
+![Status](https://img.shields.io/badge/Project-Completed-brightgreen)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Maintained](https://img.shields.io/badge/Maintained-Yes-success)
 
- Environment Setup
- 
-System Requirements
-OS: Ubuntu 22.04 / 20.04
-RAM: Minimum 4GB (recommended 8GB)
-CPU: 2 cores+
-Storage: 16GB+
+A complete step-by-step guide to install **Wazuh SIEM** on Ubuntu, including Manager, Indexer, and Dashboard setup.
 
-Step 1: Update System
+---
+
+## 📌 Overview
+
+Wazuh is an open-source Security Information and Event Management (SIEM) solution used for:
+
+* 🔍 Threat Detection
+* 📊 Log Analysis
+* 🛡️ Intrusion Detection
+* ⚙️ Compliance Monitoring
+
+This guide demonstrates a **single-node deployment** using the official installation script.
+
+---
+
+## 🖥️ System Requirements
+
+| Component | Requirement                   |
+| --------- | ----------------------------- |
+| OS        | Ubuntu 20.04 / 22.04          |
+| RAM       | Minimum 4GB (8GB Recommended) |
+| CPU       | 2 Cores+                      |
+| Storage   | 20GB+                         |
+
+---
+
+## 🚀 Installation Steps
+
+### 🔹 Step 1: Update System
+
+```bash
 sudo apt update && sudo apt upgrade -y
+```
 
-Step 2: Required Packages
+---
 
-sudo apt install curl
+### 🔹 Step 2: Install Required Packages
 
-sudo apt install curl unzip apt-transport-https gnupg -y
+```bash
+sudo apt install curl apt-transport-https unzip wget -y
+```
 
-Step 3: Wazuh Install
+---
+
+### 🔹 Step 3: Download Wazuh Installer
+
+```bash
 curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh
-
 chmod +x wazuh-install.sh
+```
 
+---
+
+### 🔹 Step 4: Install Wazuh (All-in-One)
+
+```bash
 sudo bash wazuh-install.sh -a
+```
 
-Install:
+> ⏳ Installation may take 10–20 minutes.
 
-Wazuh Manager
-Wazuh Indexer
-Wazuh Dashboard
+---
 
-Step 4: Login info save
-User: admin
+### 🔐 Step 5: Get Login Credentials
 
-Password: XXXXX
-(Must save the password)
+If you miss credentials:
 
-Get Dashboard Credentials
-
-Installation শেষে automatically username & password show করবে।
-
-👉 if miss 
-
+```bash
 sudo tar -xvf wazuh-install-files.tar
+```
 
-Step 5: Get Dashboard Credentials
+---
 
-Installation শেষে automatically username & password show করবে।
+### 🌐 Step 6: Access Dashboard
 
-Step 6: Access Wazuh Dashboard
+Open your browser:
 
-Go to Browser
-
+```
 https://<YOUR_SERVER_IP>
+```
 
-👉 Example:
+Example:
 
-https://127.0.0.1
+```
+https://192.168.1.10
+```
 
-Step 7: Check Services Status
+⚠️ Accept SSL warning if shown.
+
+---
+
+## 🖥️ Service Status Check
+
+```bash
 sudo systemctl status wazuh-manager
 sudo systemctl status wazuh-indexer
 sudo systemctl status wazuh-dashboard
+```
 
- Step 8: Add Agent (Optional)
+---
 
-Agent install (Ubuntu):
+## ➕ Add Wazuh Agent (Optional)
 
+### Install Agent
+
+```bash
 curl -sO https://packages.wazuh.com/4.x/apt/wazuh-agent.deb
 sudo WAZUH_MANAGER='YOUR_SERVER_IP' dpkg -i wazuh-agent.deb
+```
 
- Start agent:
+### Start Agent
 
+```bash
 sudo systemctl daemon-reexec
-
 sudo systemctl enable wazuh-agent
-
 sudo systemctl start wazuh-agent
+```
 
-Step 9: Restart Services (If Needed)
+---
 
+## 🔄 Restart Services
+
+```bash
 sudo systemctl restart wazuh-manager
 sudo systemctl restart wazuh-indexer
 sudo systemctl restart wazuh-dashboard
+```
+
+---
+
+## ❌ Troubleshooting
+
+### 🔴 Dashboard Not Opening
+
+```bash
+sudo systemctl restart wazuh-dashboard
+```
+
+### 🔴 API Connection Failed
+
+```bash
+sudo systemctl restart wazuh-manager
+```
+
+### 🔴 Open Required Ports
+
+```bash
+sudo ufw allow 443/tcp
+sudo ufw allow 1514/tcp
+sudo ufw allow 1515/tcp
+```
+
+---
+
+## 📁 Project Structure
+
+```
+wazuh-installation/
+├── README.md
+├── screenshots/
+└── commands.txt
+```
+
+---
+
+## 📸 Screenshots (Add Here)
+
+* Dashboard Login Page
+* Agent Status
+* Alerts View
+* System Overview
+
+---
+
+## 🎯 Learning Outcome
+
+After completing this project, you will be able to:
+
+* Install and configure Wazuh SIEM
+* Understand SIEM architecture
+* Monitor system logs and security events
+* Detect potential threats
+
+---
+
+## 💡 Author
+
+👤 Your Name
+🎓 Cyber Security Engineering Student
+
+---
+
+## ⭐ Final Note
+
+> This project demonstrates practical implementation of SIEM using Wazuh, showcasing real-world cybersecurity monitoring and threat detection capabilities.
