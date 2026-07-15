@@ -72,7 +72,9 @@ sudo WAZUH_MANAGER='YOUR_SERVER_IP' dpkg -i wazuh-agent.deb
  Start agent:
 
 sudo systemctl daemon-reexec
+
 sudo systemctl enable wazuh-agent
+
 sudo systemctl start wazuh-agent
 
 Step 9: Restart Services (If Needed)
