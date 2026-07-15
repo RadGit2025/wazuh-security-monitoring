@@ -1,4 +1,4 @@
-#Wazuh Installation Guide (Ubuntu 22.04)
+Wazuh Installation Guide (Ubuntu 22.04)
 A Full guideline of Wazuh installation 
  Environment Setup
 System Requirements
@@ -7,14 +7,14 @@ RAM: Minimum 4GB (recommended 8GB)
 CPU: 2 cores+
 Storage: 16GB+
 
-##Step 1: Update System
-```sudo apt update && sudo apt upgrade -y
+Step 1: Update System
+sudo apt update && sudo apt upgrade -y
 
-###Step 2: Required Packages
+Step 2: Required Packages
 
-```sudo apt install curl
+sudo apt install curl
 
-```sudo apt install curl unzip apt-transport-https gnupg -y
+sudo apt install curl unzip apt-transport-https gnupg -y
 
 Step 3: Wazuh Install
 curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh
