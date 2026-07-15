@@ -1,6 +1,9 @@
 Wazuh Installation Guide (Ubuntu 22.04)
+
 A Full guideline of Wazuh installation 
+
  Environment Setup
+ 
 System Requirements
 OS: Ubuntu 22.04 / 20.04
 RAM: Minimum 4GB (recommended 8GB)
