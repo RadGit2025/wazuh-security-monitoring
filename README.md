@@ -76,6 +76,7 @@ sudo systemctl enable wazuh-agent
 sudo systemctl start wazuh-agent
 
 Step 9: Restart Services (If Needed)
+
 sudo systemctl restart wazuh-manager
 sudo systemctl restart wazuh-indexer
 sudo systemctl restart wazuh-dashboard
