@@ -73,7 +73,8 @@ ip a
 sudo ufw status
 ```
 
-!image.png
+<img width="887" height="610" alt="image" src="https://github.com/user-attachments/assets/504fd4d6-71c0-4324-b43b-7683b6384434" />
+
 
 ✅ **SSH service is running**
 
@@ -126,15 +127,18 @@ Connect ubuntu server with Mobaxterm (ssh connection)
  IP like `192.168.x.xxx`
 
 Go to session and click it
+<img width="1137" height="220" alt="image" src="https://github.com/user-attachments/assets/9ab916d5-a0e3-4890-88ce-1b63ff5f5b88" />
 
-!image.png
+<img width="1011" height="672" alt="image" src="https://github.com/user-attachments/assets/89e2944c-784c-4d9e-a8a9-bb12b09fab02" />
 
-!image.png
+<img width="991" height="566" alt="image" src="https://github.com/user-attachments/assets/4b33dad6-ab2f-4c9a-81ad-fc125c1e79f5" />
 
-!image.png
 
 Input IP address and username.
 
+<img width="1157" height="1035" alt="image" src="https://github.com/user-attachments/assets/2c232bc3-d543-4280-82b4-129715b87b47" />
+
+
 Give the password and the interface will look like this
 
-!image.png
+
