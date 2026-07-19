@@ -114,8 +114,10 @@ Add:
   <group>syscheck</group>
   <alert_format>json</alert_format>
 </integration>
+
+add api key you get from virustotal .add it in the place of "your_api_key.
 ```
-add api key  
+
 ---
 
 ### 4️ Validate Configuration
