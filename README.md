@@ -192,14 +192,3 @@ After completing this project, you will be able to:
 * Detect potential threats
 
 ---
-
-## 💡 Author
-
-👤 Your Name
-🎓 Cyber Security Engineering Student
-
----
-
-## ⭐ Final Note
-
-> This project demonstrates practical implementation of SIEM using Wazuh, showcasing real-world cybersecurity monitoring and threat detection capabilities.
