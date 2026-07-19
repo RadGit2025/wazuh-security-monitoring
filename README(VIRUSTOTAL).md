@@ -115,7 +115,7 @@ Add:
   <alert_format>json</alert_format>
 </integration>
 ```
-
+add api key  
 ---
 
 ### 4️ Validate Configuration
